@@ -11,3 +11,4 @@ jobs:
       - checkout
       - run: dotnet build
       - run: dotnet test
+
