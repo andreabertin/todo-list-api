@@ -8,9 +8,7 @@ jobs:
     steps:
       - checkout
 
-      - run: dotnet tool install --global dotnet-sonarscanner
-
-      - run: cd /root/.dotnet/tools | ls -l
+      - run: dotnet tool install  --tool-path . dotnet-sonarscanner
 
       - run: ls  -l
 
