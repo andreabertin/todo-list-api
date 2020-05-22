@@ -10,7 +10,7 @@ jobs:
 
       - run: dotnet tool install --global dotnet-sonarscanner
 
-      - run: cd ~/.dotnet/tools
+      - run: cd /.dotnet/tools
 
       - run: pwd
 
