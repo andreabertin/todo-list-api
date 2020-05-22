@@ -12,11 +12,9 @@ jobs:
 
       - run: dotnet tool install  --tool-path ./dn-tools dotnet-sonarscanner
 
-      - run: ls  -l
-
-      - run: cd dn-tools
-
       - run: ls -l
+
+      - run: ls dn-tools -l
 
       - run: dotnet sonarscanner begin /k:"ProjectKey" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="a4d55ec7e11d17e0e2a60205253c802be07739b9"
 
