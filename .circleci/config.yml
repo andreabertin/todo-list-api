@@ -10,7 +10,11 @@ jobs:
 
       - run: dotnet tool install --global dotnet-sonarscanner
 
+      - run: cd ~/.dotnet/tools
+
       - run: pwd
+
+      - run: ll
 
       - run: dotnet sonarscanner begin /k:"ProjectKey" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="a4d55ec7e11d17e0e2a60205253c802be07739b9"
 
