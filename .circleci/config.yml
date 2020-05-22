@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: mcr.microsoft.com/dotnet/core/sdk:3.1.4-alpine-arm64v8
+      - image: mcr.microsoft.com/dotnet/core/sdk
    
     steps:
       - checkout
