@@ -2,7 +2,6 @@ version: 2.1
 
 jobs:
   build:
-    context: SonarCloud
     
     docker:
       - image: mcr.microsoft.com/dotnet/core/sdk
@@ -26,3 +25,8 @@ jobs:
 
       - run: dotnet sonarscanner end "/d:sonar.login=<<parameters.sonarcloudccilogin>>"
 
+workflows: # a single workflow with a single job called build
+  build:
+    jobs:
+      - build:
+          context: SonarCloud
