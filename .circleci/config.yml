@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  dotnet-sonarscanner: storytel/dotnet-sonarscanner@1.0.0
+
 jobs:
   build:
     docker:
@@ -10,11 +13,9 @@ jobs:
 
       - run: mkdir dn-tools
 
-      - run: dotnet tool install  --tool-path ./dn-tools dotnet-sonarscanner
+      - run: dotnet tool install  dotnet-sonarscanner
 
-      - run: ls -l
-
-      - run: ls dn-tools/dotnet-sonarscanner -l -R
+      - run: echo 'export PATH="$PATH:/root/.dotnet/tools"' >> $BASH_ENV
 
       - run: dotnet sonarscanner begin /k:"ProjectKey" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="a4d55ec7e11d17e0e2a60205253c802be07739b9"
 
