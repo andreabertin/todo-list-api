@@ -17,13 +17,13 @@ jobs:
 
       - run: echo 'export PATH="$PATH:/root/.dotnet/tools"' >> $BASH_ENV
 
-      - run: dotnet sonarscanner begin "/k:Ab.ToDo.Api" "/n:ToDo Api" "/o:microservices-test" "/d:sonar.host.url=https://sonarcloud.io" "/d:sonar.login=$SONARCLOUD_CC_LOGIN"
+      - run: dotnet sonarscanner begin
 
       - run: dotnet build
 
       - run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
 
-      - run: dotnet sonarscanner end "/d:sonar.login=$SONARCLOUD_CC_LOGIN"
+      - run: dotnet sonarscanner end
 
 
 workflows:
