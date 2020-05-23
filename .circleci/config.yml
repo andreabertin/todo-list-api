@@ -9,9 +9,9 @@ jobs:
     steps:
       - checkout
 
-      - run: sudo apt-get update
-      
-      - run: sudo apt-get install default-jre
+      - run: apt-get update
+
+      - run: apt-get install default-jre
 
       - run: echo $JAVA_HOME
 
