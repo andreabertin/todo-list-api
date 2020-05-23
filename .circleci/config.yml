@@ -2,6 +2,8 @@ version: 2.1
 
 jobs:
   build:
+    context: SonarCloud
+    
     docker:
       - image: mcr.microsoft.com/dotnet/core/sdk
       
@@ -12,21 +14,15 @@ jobs:
 
       - run: apt-get -y install default-jre
 
-      - run: echo $JAVA_HOME
-
-      - run: cat /etc/profile
-
-      - run: java --version
-
       - run: dotnet tool install -g dotnet-sonarscanner
 
       - run: echo 'export PATH="$PATH:/root/.dotnet/tools"' >> $BASH_ENV
 
-      - run: dotnet sonarscanner begin "/k:Ab.ToDo.Api" "/n:ToDo Api" "/o:microservices-test" "/d:sonar.host.url=https://sonarcloud.io" "/d:sonar.login=a4d55ec7e11d17e0e2a60205253c802be07739b9"
+      - run: dotnet sonarscanner begin "/k:Ab.ToDo.Api" "/n:ToDo Api" "/o:microservices-test" "/d:sonar.host.url=https://sonarcloud.io" "/d:sonar.login=<<parameters.sonarcloudccilogin>>"
 
       - run: dotnet build
 
       - run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
 
-      - run: dotnet sonarscanner end "/d:sonar.login=a4d55ec7e11d17e0e2a60205253c802be07739b9"
+      - run: dotnet sonarscanner end "/d:sonar.login=<<parameters.sonarcloudccilogin>>"
 
