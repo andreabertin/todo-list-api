@@ -8,6 +8,8 @@ jobs:
     steps:
       - checkout
 
+      - run: cat ~/.bash_profile
+
       - run: java --version
 
       - run: dotnet tool install -g dotnet-sonarscanner
