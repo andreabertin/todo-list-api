@@ -8,7 +8,7 @@ jobs:
     steps:
       - checkout
 
-      - run: mkdir dn-tools
+      - run: java --version
 
       - run: dotnet tool install -g dotnet-sonarscanner
 
