@@ -4,13 +4,14 @@ jobs:
   build:
     docker:
       - image: mcr.microsoft.com/dotnet/core/sdk
+      - image: circleci/openjdk:11.0.3-jdk-stretch
    
     steps:
       - checkout
 
       - run: echo $JAVA_HOME
 
-      - run: cat ~/.bashrc
+      - run: cat /etc/profile
 
       - run: java --version
 
