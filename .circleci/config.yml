@@ -8,7 +8,9 @@ jobs:
     steps:
       - checkout
 
-      - run: cat ~/.bash_profile
+      - run: echo $JAVA_HOME
+
+      - run: cat ~/.bashrc
 
       - run: java --version
 
