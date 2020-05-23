@@ -4,14 +4,13 @@ jobs:
   build:
     docker:
       - image: mcr.microsoft.com/dotnet/core/sdk
-      - image: circleci/openjdk:11.0.3-jdk-stretch
-   
+      
     steps:
       - checkout
 
       - run: apt-get update
 
-      - run: apt-get install default-jre
+      - run: apt-get -y install default-jre
 
       - run: echo $JAVA_HOME
 
