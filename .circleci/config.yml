@@ -9,6 +9,10 @@ jobs:
     steps:
       - checkout
 
+      - run: sudo apt-get update
+      
+      - run: sudo apt-get install default-jre
+
       - run: echo $JAVA_HOME
 
       - run: cat /etc/profile
