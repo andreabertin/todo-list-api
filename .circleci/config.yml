@@ -10,7 +10,7 @@ jobs:
 
       - run: mkdir dn-tools
 
-      - run: dotnet tool install  dotnet-sonarscanner
+      - run: dotnet tool install --gloabal dotnet-sonarscanner
 
       - run: echo 'export PATH="$PATH:/root/.dotnet/tools"' >> $BASH_ENV
 
